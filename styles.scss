@@ -2,6 +2,7 @@
   --bg: #f5f6fa;
   --card: #ffffff;
   --line: #d5d5d5;
+  --border: #ececec;
   --text: #202224;
   --muted: #646464;
   --primary: #4880ff;
@@ -49,7 +50,7 @@ input:focus-visible {
 .sidebar {
   width: 240px;
   background: #fff;
-  border-right: 1px solid #ececec;
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   padding: 24px 16px;
@@ -73,7 +74,7 @@ input:focus-visible {
 }
 
 .menu-group + .menu-group {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid var(--border);
   margin-top: 8px;
   padding-top: 12px;
 }
@@ -99,6 +100,7 @@ input:focus-visible {
   align-items: center;
   font-size: 14px;
   font-weight: 700;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .menu-item:hover {
@@ -140,7 +142,7 @@ input:focus-visible {
 .topbar {
   height: 70px;
   background: #fff;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -187,6 +189,11 @@ input:focus-visible {
 
 .search-wrap input::placeholder {
   color: #7a818f;
+}
+
+.search-wrap input:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(72, 128, 255, 0.15);
 }
 
 .search-icon {
@@ -253,6 +260,10 @@ input:focus-visible {
   padding: 0;
 }
 
+.profile {
+  cursor: pointer;
+}
+
 .flag {
   width: 40px;
   height: 27px;
@@ -311,6 +322,13 @@ h1 {
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.revenue-card:hover,
+.stat-card:hover {
+  box-shadow: 8px 8px 54px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .revenue-card {
@@ -345,6 +363,13 @@ h3 {
   font-weight: 700;
   padding: 0 12px;
   cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.month-picker:hover {
+  background: #f3f6ff;
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .revenue-graph {
@@ -457,6 +482,12 @@ h3 {
   background: transparent;
   padding: 0;
   cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.slider-nav button:hover {
+  opacity: 0.75;
+  transform: scale(1.08);
 }
 
 .slider-nav img {
@@ -496,6 +527,21 @@ h3 {
   width: 100%;
   margin-top: 10px;
   border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 15;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.app.nav-open .overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 1180px) {
