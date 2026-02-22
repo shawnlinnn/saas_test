@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashStack - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="logo"><span>Dash</span>Stack</div>
+
+        <nav class="menu-group">
+          <a href="#" class="menu-item menu-item-active">Dashboard</a>
+          <a href="#" class="menu-item">Products</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Inbox</a>
+          <a href="#" class="menu-item">Order Lists</a>
+          <a href="#" class="menu-item">Product Stock</a>
+        </nav>
+
+        <div class="section-label">Pages</div>
+
+        <nav class="menu-group">
+          <a href="#" class="menu-item">Pricing</a>
+          <a href="#" class="menu-item">Calender</a>
+          <a href="#" class="menu-item">To-Do</a>
+          <a href="#" class="menu-item">Contact</a>
+          <a href="#" class="menu-item">Invoice</a>
+          <a href="#" class="menu-item">UI Elements</a>
+          <a href="#" class="menu-item">Team</a>
+          <a href="#" class="menu-item">Table</a>
+        </nav>
+
+        <nav class="menu-group menu-group-bottom">
+          <a href="#" class="menu-item">Settings</a>
+          <a href="#" class="menu-item">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="search-wrap">
+            <img
+              src="https://www.figma.com/api/mcp/asset/78adeb5c-0fad-4df0-81e9-cf167473aac4"
+              alt=""
+              class="search-icon"
+            />
+            <input type="search" placeholder="Search" aria-label="Search" />
+          </div>
+
+          <div class="topbar-right">
+            <button class="icon-button" aria-label="Notifications">
+              <img
+                src="https://www.figma.com/api/mcp/asset/6b9437f5-38d3-4d84-9ba6-e99de17da4bd"
+                alt=""
+              />
+              <span class="badge">6</span>
+            </button>
+
+            <button class="lang-switch" aria-label="Language">
+              <img
+                src="https://www.figma.com/api/mcp/asset/99d9015a-ffdf-4211-84e8-582f79be436d"
+                alt="English flag"
+                class="flag"
+              />
+              <span>English</span>
+              <img
+                src="https://www.figma.com/api/mcp/asset/87b67c6b-59eb-4fce-aaf8-f06737167e13"
+                alt=""
+                class="chevron"
+              />
+            </button>
+
+            <div class="profile">
+              <img
+                src="https://www.figma.com/api/mcp/asset/4a72b4f5-21b2-425d-92f9-2ffa720c0dc1"
+                alt="Moni Roy"
+                class="avatar"
+              />
+              <div class="profile-text">
+                <strong>Moni Roy</strong>
+                <span>Admin</span>
+              </div>
+              <img
+                src="https://www.figma.com/api/mcp/asset/dab2b1a7-0f7b-4ebb-aab7-07ee6a412281"
+                alt=""
+                class="chevron"
+              />
+            </div>
+          </div>
+        </header>
+
+        <section class="content">
+          <div class="page-head">
+            <h1>Dashboard</h1>
+          </div>
+
+          <section class="revenue-card">
+            <div class="revenue-head">
+              <h2>Revenue</h2>
+              <button class="month-picker">
+                October
+                <img
+                  src="https://www.figma.com/api/mcp/asset/e9148ae9-940b-4ab9-8dc2-c930f04a0124"
+                  alt=""
+                  class="chevron"
+                />
+              </button>
+            </div>
+            <img
+              src="https://www.figma.com/api/mcp/asset/4d449bde-4159-49d3-a6eb-d02946faeaa5"
+              alt="Revenue graph"
+              class="revenue-graph"
+            />
+            <div class="chart-legend">
+              <span><i class="dot dot-sales"></i>Sales</span>
+              <span><i class="dot dot-profit"></i>Profit</span>
+            </div>
+          </section>
+
+          <section class="stats-grid">
+            <article class="stat-card">
+              <h3>Customers</h3>
+              <div class="donut-wrap">
+                <img
+                  src="https://www.figma.com/api/mcp/asset/55881b89-5921-47d8-8c27-9d71deb5e587"
+                  alt="Customer ratio chart"
+                  class="donut"
+                />
+              </div>
+              <div class="metric-row">
+                <div class="metric">
+                  <strong>34,249</strong>
+                  <span><i class="dot dot-primary"></i>New Customers</span>
+                </div>
+                <div class="metric">
+                  <strong>1420</strong>
+                  <span><i class="dot dot-muted"></i>Repeated</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <h3>Featured Product</h3>
+              <div class="slider-nav">
+                <button aria-label="Previous">
+                  <img
+                    src="https://www.figma.com/api/mcp/asset/dae24e5d-d38b-4912-aac4-c804de58913c"
+                    alt=""
+                  />
+                </button>
+                <button aria-label="Next">
+                  <img
+                    src="https://www.figma.com/api/mcp/asset/2a6f6a5e-94dc-4b2e-b595-233be951e68a"
+                    alt=""
+                  />
+                </button>
+              </div>
+              <div class="product-copy">
+                <strong>Beats Headphone 2026</strong>
+                <span>$89.00</span>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <h3>Sales Analytics</h3>
+              <img
+                src="https://www.figma.com/api/mcp/asset/8d540682-cb4b-4abe-bfeb-ea17fc66dd87"
+                alt="Sales analytics chart"
+                class="sales-graph"
+              />
+            </article>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
