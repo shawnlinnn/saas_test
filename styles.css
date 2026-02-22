@@ -309,6 +309,8 @@ input:focus-visible {
 
 .content {
   padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .page-head {
@@ -321,7 +323,7 @@ input:focus-visible {
 
 h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.4px;
@@ -330,7 +332,7 @@ h1 {
 .page-subtitle {
   margin: 8px 0 0;
   color: #6d7685;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -391,7 +393,7 @@ h1 {
 }
 
 .revenue-card {
-  padding: 22px;
+  padding: 22px 22px 14px;
 }
 
 .revenue-head {
@@ -404,7 +406,7 @@ h1 {
 h2,
 h3 {
   margin: 0;
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 800;
 }
@@ -434,8 +436,8 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 48px;
-  margin-top: 14px;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 16px;
   font-weight: 800;
 }
 
@@ -470,7 +472,7 @@ h3 {
 
 .stat-card {
   min-height: 365px;
-  padding: 20px;
+  padding: 20px 20px 18px;
   position: relative;
 }
 
@@ -481,27 +483,28 @@ h3 {
 }
 
 .donut {
-  width: 190px;
+  width: 170px;
   max-width: 100%;
 }
 
 .metric-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
 }
 
 .metric strong {
   display: block;
-  font-size: 42px;
+  font-size: 24px;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .metric span {
-  font-size: 20px;
+  font-size: 13px;
   color: #4b5567;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 .dot-primary {
@@ -515,7 +518,7 @@ h3 {
 .slider-nav {
   display: flex;
   justify-content: space-between;
-  margin: 26px 0 18px;
+  margin: 16px 0 14px;
 }
 
 .slider-nav button {
@@ -534,11 +537,11 @@ h3 {
 }
 
 .product-preview {
-  height: 150px;
+  height: 136px;
   border-radius: 12px;
   background: linear-gradient(145deg, #eef4ff 0%, #ffffff 60%, #e8f0ff 100%);
   border: 1px solid #e6eeff;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .product-copy {
@@ -547,15 +550,18 @@ h3 {
 
 .product-copy strong {
   display: block;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.2;
   color: #282d32;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-copy span {
   display: block;
   margin-top: 4px;
-  font-size: 22px;
+  font-size: 16px;
   color: #4880ff;
   opacity: 0.8;
   font-weight: 800;
@@ -563,7 +569,7 @@ h3 {
 
 .sales-graph {
   width: 100%;
-  margin-top: 14px;
+  margin-top: 10px;
   border-radius: 8px;
 }
 
@@ -577,7 +583,7 @@ h3 {
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   h2,
@@ -591,12 +597,12 @@ h3 {
 
   .metric strong,
   .product-copy strong {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .metric span,
   .product-copy span {
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
@@ -673,11 +679,11 @@ h3 {
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   h2,
   h3 {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
