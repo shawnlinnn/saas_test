@@ -1,12 +1,15 @@
 :root {
   --bg: #f5f6fa;
   --card: #ffffff;
-  --line: #d5d5d5;
+  --line: #d9deea;
   --text: #202224;
-  --muted: #565656;
+  --muted: #6a7382;
   --primary: #4880ff;
+  --primary-soft: #edf3ff;
   --sales: #fa8564;
   --profit: #c09bf0;
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(31, 50, 81, 0.08);
 }
 
 * {
@@ -19,12 +22,24 @@ body {
   min-height: 100%;
   font-family: "Nunito Sans", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: radial-gradient(circle at top right, #edf2ff 0%, var(--bg) 45%);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(72, 128, 255, 0.35);
+  outline-offset: 2px;
 }
 
 .app {
@@ -35,7 +50,7 @@ a {
 .sidebar {
   width: 240px;
   background: #fff;
-  border-right: 1px solid #ececec;
+  border-right: 1px solid #eceff6;
   display: flex;
   flex-direction: column;
   padding: 24px 16px;
@@ -43,7 +58,7 @@ a {
 
 .logo {
   margin: 0 0 16px 30px;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1;
   font-weight: 800;
 }
@@ -59,7 +74,7 @@ a {
 }
 
 .menu-group + .menu-group {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid #eceff6;
   margin-top: 8px;
   padding-top: 12px;
 }
@@ -79,17 +94,29 @@ a {
 
 .menu-item {
   height: 50px;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0 18px;
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+  background: #f0f4ff;
+  color: #1e3f84;
+  transform: translateX(1px);
 }
 
 .menu-item-active {
   position: relative;
   background: var(--primary);
+  color: #fff;
+}
+
+.menu-item-active:hover {
+  background: #3f74e6;
   color: #fff;
 }
 
@@ -120,51 +147,81 @@ a {
 }
 
 .topbar {
-  height: 70px;
-  background: #fff;
-  border-bottom: 1px solid #ececec;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #eceff6;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px 0 54px;
+  gap: 16px;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.menu-toggle {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d8e2fa;
+  border-radius: 10px;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 16px;
+  height: 2px;
+  background: #3b4e7b;
+  border-radius: 1px;
 }
 
 .search-wrap {
   width: min(422px, 100%);
-  height: 38px;
+  height: 40px;
   position: relative;
 }
 
 .search-wrap input {
   width: 100%;
   height: 100%;
-  border: 0.6px solid var(--line);
-  border-radius: 19px;
-  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #f8faff;
   outline: none;
-  padding: 0 16px 0 34px;
+  padding: 0 16px 0 36px;
   font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-wrap input:focus {
+  border-color: #9fb8f8;
+  box-shadow: 0 0 0 4px rgba(72, 128, 255, 0.14);
 }
 
 .search-wrap input::placeholder {
-  color: #202224;
-  opacity: 0.5;
+  color: #7b8494;
 }
 
 .search-icon {
   position: absolute;
-  left: 11px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  opacity: 0.6;
+  opacity: 0.66;
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .icon-button {
@@ -207,7 +264,7 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #646464;
+  color: #646d7d;
   font-size: 14px;
 }
 
@@ -241,50 +298,107 @@ a {
 
 .profile-text strong {
   font-size: 14px;
-  color: #404040;
+  color: #2d3645;
 }
 
 .profile-text span {
   font-size: 12px;
-  color: #565656;
-  font-weight: 600;
+  color: #687183;
+  font-weight: 700;
 }
 
 .content {
-  padding: 20px 22px 24px;
+  padding: 24px;
 }
 
 .page-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 14px;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
 h1 {
   margin: 0;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.4px;
+}
+
+.page-subtitle {
+  margin: 8px 0 0;
+  color: #6d7685;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.head-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ghost-btn,
+.primary-btn {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ghost-btn {
+  background: #fff;
+  border: 1px solid #d6e1fa;
+  color: #4062a8;
+}
+
+.primary-btn {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+}
+
+.ghost-btn:hover,
+.primary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ghost-btn:hover {
+  background: #f4f8ff;
+}
+
+.primary-btn:hover {
+  background: #3f74e6;
+  box-shadow: 0 8px 18px rgba(72, 128, 255, 0.3);
 }
 
 .revenue-card,
 .stat-card {
   background: var(--card);
-  border-radius: 14px;
-  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.revenue-card:hover,
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(31, 50, 81, 0.12);
 }
 
 .revenue-card {
-  padding: 22px 22px 18px;
+  padding: 22px;
 }
 
 .revenue-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 h2,
@@ -292,20 +406,22 @@ h3 {
   margin: 0;
   font-size: 34px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .month-picker {
-  height: 28px;
-  border: 0.6px solid var(--line);
-  border-radius: 4px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   background: #fcfdfd;
-  color: rgba(43, 48, 52, 0.4);
+  color: #74809a;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 12px;
+  font-weight: 700;
   padding: 0 12px;
+  cursor: pointer;
 }
 
 .revenue-graph {
@@ -318,9 +434,9 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 48px;
-  margin-top: 10px;
-  font-size: 28px;
-  font-weight: 700;
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .chart-legend span,
@@ -331,8 +447,8 @@ h3 {
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -354,18 +470,18 @@ h3 {
 
 .stat-card {
   min-height: 365px;
-  padding: 24px;
+  padding: 20px;
   position: relative;
 }
 
 .donut-wrap {
   display: flex;
   justify-content: center;
-  margin: 18px 0 16px;
+  margin: 8px 0 8px;
 }
 
 .donut {
-  width: 220px;
+  width: 190px;
   max-width: 100%;
 }
 
@@ -379,13 +495,13 @@ h3 {
   display: block;
   font-size: 42px;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .metric span {
-  font-size: 29px;
-  color: #4b4b4b;
-  font-weight: 600;
+  font-size: 20px;
+  color: #4b5567;
+  font-weight: 700;
 }
 
 .dot-primary {
@@ -399,7 +515,7 @@ h3 {
 .slider-nav {
   display: flex;
   justify-content: space-between;
-  margin: 56px 0 130px;
+  margin: 26px 0 18px;
 }
 
 .slider-nav button {
@@ -409,11 +525,20 @@ h3 {
   border-radius: 999px;
   background: transparent;
   padding: 0;
+  cursor: pointer;
 }
 
 .slider-nav img {
   width: 100%;
   height: 100%;
+}
+
+.product-preview {
+  height: 150px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #eef4ff 0%, #ffffff 60%, #e8f0ff 100%);
+  border: 1px solid #e6eeff;
+  margin-bottom: 16px;
 }
 
 .product-copy {
@@ -422,7 +547,7 @@ h3 {
 
 .product-copy strong {
   display: block;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 1.2;
   color: #282d32;
 }
@@ -430,15 +555,15 @@ h3 {
 .product-copy span {
   display: block;
   margin-top: 4px;
-  font-size: 29px;
+  font-size: 22px;
   color: #4880ff;
-  opacity: 0.7;
-  font-weight: 700;
+  opacity: 0.8;
+  font-weight: 800;
 }
 
 .sales-graph {
   width: 100%;
-  margin-top: 18px;
+  margin-top: 14px;
   border-radius: 8px;
 }
 
@@ -451,12 +576,8 @@ h3 {
     width: calc(100% - 210px);
   }
 
-  .topbar {
-    padding-left: 20px;
-  }
-
   h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   h2,
@@ -464,59 +585,79 @@ h3 {
     font-size: 28px;
   }
 
-  .chart-legend,
-  .product-copy strong,
-  .metric strong {
-    font-size: 24px;
+  .chart-legend {
+    font-size: 16px;
+  }
+
+  .metric strong,
+  .product-copy strong {
+    font-size: 26px;
   }
 
   .metric span,
   .product-copy span {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 980px) {
   .app {
-    flex-direction: column;
+    position: relative;
   }
 
   .sidebar {
-    width: 100%;
-    border-right: 0;
-    border-bottom: 1px solid #ececec;
-    padding: 16px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 260px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 20;
+    box-shadow: 0 20px 30px rgba(12, 22, 39, 0.28);
   }
 
-  .menu-group,
-  .menu-group + .menu-group,
-  .section-label {
-    display: none;
-  }
-
-  .logo {
-    margin: 0;
+  .app.nav-open .sidebar {
+    transform: translateX(0);
   }
 
   .main {
     width: 100%;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .topbar {
     height: auto;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
+    flex-wrap: wrap;
     padding: 12px 16px;
   }
 
+  .search-wrap {
+    order: 3;
+    width: 100%;
+  }
+
   .topbar-right {
-    justify-content: space-between;
-    gap: 8px;
+    margin-left: auto;
+    gap: 10px;
   }
 
   .content {
     padding: 16px;
+  }
+
+  .page-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .head-actions {
+    width: 100%;
+  }
+
+  .head-actions button {
+    flex: 1;
   }
 
   .stats-grid {
@@ -527,31 +668,16 @@ h3 {
     min-height: auto;
   }
 
-  .slider-nav {
-    margin: 24px 0 56px;
-  }
-
   .chart-legend {
     gap: 18px;
-    font-size: 16px;
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   h2,
   h3 {
-    font-size: 32px;
-  }
-
-  .metric strong {
-    font-size: 32px;
-  }
-
-  .metric span,
-  .product-copy span,
-  .product-copy strong {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
