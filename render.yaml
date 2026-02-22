@@ -16,7 +16,7 @@ services:
         value: no-cache, no-store, must-revalidate
       - path: /styles.css
         name: Cache-Control
-        value: public, max-age=3600
+        value: no-cache, no-store, must-revalidate
       - path: /main.js
         name: Cache-Control
-        value: public, max-age=3600
+        value: no-cache, no-store, must-revalidate
