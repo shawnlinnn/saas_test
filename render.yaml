@@ -2,7 +2,6 @@ services:
   - type: web
     name: saas-codex-dashboard
     runtime: static
-    plan: free
     branch: main
     autoDeploy: true
     buildCommand: echo "No build step required"
