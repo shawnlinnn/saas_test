@@ -98,13 +98,29 @@ input:focus-visible {
   padding: 0 18px;
   display: flex;
   align-items: center;
+  gap: 12px;
   font-size: 14px;
   font-weight: 700;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
+.menu-item svg {
+  flex-shrink: 0;
+  color: #a0a8b8;
+  transition: color 0.15s ease;
+}
+
 .menu-item:hover {
   background: #f3f6ff;
+}
+
+.menu-item:hover svg {
+  color: var(--primary);
+}
+
+.menu-item-active svg,
+.menu-item-active:hover svg {
+  color: #fff;
 }
 
 .menu-item-active {
